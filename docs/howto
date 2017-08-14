@@ -1,0 +1,18 @@
+1> {ok, Socket} = gen_tcp:connect({127,0,0,1},5000,[binary,{active,true}]).
+{ok,#Port<0.423>}
+2> gen_tcp:send(Socket, "Hello").
+ok
+3> flush().
+Shell got {tcp,#Port<0.423>,<<"Hello from Test Erlang server">>}
+ok
+4> gen_tcp:send(Socket, "cube=123").
+ok
+5> flush().
+Shell got {tcp,#Port<0.423>,<<"Result: 1860867">>}
+ok
+6> gen_tcp:send(Socket, "quit").    
+ok
+7> flush().
+Shell got {tcp_closed,#Port<0.423>}
+ok
+8> 
