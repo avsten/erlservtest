@@ -1,5 +1,12 @@
+For server connect use:
+
 1> {ok, Socket} = gen_tcp:connect({127,0,0,1},5000,[binary,{active,true}]).
 {ok,#Port<0.423>}
+
+127.0.0.1 localhost ip (for external server use other ip address)
+
+Also you can try talk with server:
+
 2> gen_tcp:send(Socket, "Hello").
 ok
 3> flush().
