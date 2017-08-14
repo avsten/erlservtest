@@ -1,3 +1,10 @@
+For server start use:
+move server.erl to working dir and type:
+
+erl
+c(server).
+server:start_server().
+
 For server connect use:
 
 1> {ok, Socket} = gen_tcp:connect({127,0,0,1},5000,[binary,{active,true}]).
